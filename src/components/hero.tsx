@@ -1,3 +1,4 @@
+import React from "react"
 {/* HERO */}
 <section
   className="relative min-h-screen bg-cover bg-center"
