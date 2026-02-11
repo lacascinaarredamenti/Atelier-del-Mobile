@@ -610,7 +610,7 @@ export const products: Product[] = [
   }
 },
   {
-    image: '/images/consolle-TV.webp',
+    image: '/images/consolle-tv.webp',
     name: 'Consolle TV',
     description: 'Consolle in legno massello, elegante e ricca di dettagli. Dotata di tre cassetti frontali con maniglie decorative in metallo e di un ripiano inferiore per appoggio aggiuntivo. Le gambe mosse e le applicazioni intagliate donano un carattere classico e raffinato. Perfetta per ingressi, soggiorni o ambienti dallo stile tradizionale.',
     category: 'Consolle',
