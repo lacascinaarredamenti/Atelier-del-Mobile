@@ -1,9 +1,20 @@
 import React from "react"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
+import HomePage from "./pages/HomePage"
+import MilanoPage from "./pages/MilanoPage"
+import TorinoPage from "./pages/TorinoPage"
+import GenovaPage from "./pages/GenovaPage"
+
 export default function App() {
   return (
-    <div style={{ padding: "40px", fontFamily: "sans-serif" }}>
-      <h1>Atelier del Mobile</h1>
-      <p>Deploy corretto 🚀</p>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/milano" element={<MilanoPage />} />
+        <Route path="/torino" element={<TorinoPage />} />
+        <Route path="/genova" element={<GenovaPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
