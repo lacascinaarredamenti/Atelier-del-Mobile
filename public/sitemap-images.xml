@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+ xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+>
+
+<!-- HOME HERO -->
+<url>
+  <loc>https://www.atelierdelmobile.com/</loc>
+  <image:image>
+    <image:loc>
+      https://www.atelierdelmobile.com/images/hero.webp
+    </image:loc>
+    <image:title>Showroom mobili classici Atelier del Mobile</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>
+      https://www.atelierdelmobile.com/images/logo.webp
+    </image:loc>
+    <image:title>Logo Atelier del Mobile</image:title>
+  </image:image>
+</url>
+
+<!-- CATEGORIE PRINCIPALI -->
+
+<url>
+  <loc>https://www.atelierdelmobile.com/#armadi</loc>
+  <image:image>
+    <image:loc>
+      https://www.atelierdelmobile.com/images/armadio-classico.webp
+    </image:loc>
+    <image:title>Armadio classico artigianale in legno massello</image:title>
+  </image:image>
+</url>
+
+<url>
+  <loc>https://www.atelierdelmobile.com/#tavoli</loc>
+  <image:image>
+    <image:loc>
+      https://www.atelierdelmobile.com/images/tavolo-classico.webp
+    </image:loc>
+    <image:title>Tavolo classico artigianale in legno massello</image:title>
+  </image:image>
+</url>
+
+<url>
+  <loc>https://www.atelierdelmobile.com/#sedie</loc>
+  <image:image>
+    <image:loc>
+      https://www.atelierdelmobile.com/images/sedia-classica.webp
+    </image:loc>
+    <image:title>Sedia classica artigianale imbottita</image:title>
+  </image:image>
+</url>
+
+<url>
+  <loc>https://www.atelierdelmobile.com/#credenze</loc>
+  <image:image>
+    <image:loc>
+      https://www.atelierdelmobile.com/images/credenza-classica.webp
+    </image:loc>
+    <image:title>Credenza classica artigianale in legno massello</image:title>
+  </image:image>
+</url>
+
+<url>
+  <loc>https://www.atelierdelmobile.com/#lampade</loc>
+  <image:image>
+    <image:loc>
+      https://www.atelierdelmobile.com/images/lampada-classica.webp
+    </image:loc>
+    <image:title>Lampada classica decorativa</image:title>
+  </image:image>
+</url>
+
+</urlset>
