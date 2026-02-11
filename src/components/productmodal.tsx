@@ -1,6 +1,6 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { createPortal } from "react-dom"
-import { X, MessageCircle } from "lucide-react"
+import { X, MessageCircle, ChevronLeft, ChevronRight } from "lucide-react"
 import { Product } from "../data/products"
 
 type Props = {
@@ -9,12 +9,29 @@ type Props = {
 }
 
 export default function ProductModal({ product, onClose }: Props) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const images =
+    product.gallery && product.gallery.length > 0
+      ? product.gallery
+      : [product.image]
+
   useEffect(() => {
     document.body.style.overflow = "hidden"
     return () => {
       document.body.style.overflow = ""
     }
   }, [])
+
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length)
+  }
+
+  const prevImage = () => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? images.length - 1 : prev - 1
+    )
+  }
 
   return createPortal(
     <div
@@ -50,20 +67,50 @@ export default function ProductModal({ product, onClose }: Props) {
 
         {/* CONTENT */}
         <div className="grid grid-cols-1 md:grid-cols-2 items-start">
-          {/* SINISTRA – IMMAGINE */}
-          <div className="bg-black">
+          {/* SINISTRA – SLIDER IMMAGINI */}
+          <div className="bg-black relative">
             <img
-              src={
-                product.gallery && product.gallery.length > 0
-                  ? product.gallery[0]
-                  : product.image
-              }
+              src={images[currentIndex]}
               alt={product.name}
               className="w-full h-full object-cover"
             />
+
+            {/* FRECCE solo se più immagini */}
+            {images.length > 1 && (
+              <>
+                <button
+                  onClick={prevImage}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 p-2 rounded-full"
+                >
+                  <ChevronLeft size={18} />
+                </button>
+
+                <button
+                  onClick={nextImage}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 p-2 rounded-full"
+                >
+                  <ChevronRight size={18} />
+                </button>
+
+                {/* DOTS */}
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+                  {images.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setCurrentIndex(i)}
+                      className={`w-2 h-2 rounded-full ${
+                        i === currentIndex
+                          ? "bg-yellow-400"
+                          : "bg-neutral-600"
+                      }`}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
           </div>
 
-          {/* DESTRA – TESTO (SENZA SCROLL, SENZA ALTEZZA FISSA) */}
+          {/* DESTRA – TESTO */}
           <div className="flex flex-col p-5">
             {/* DESCRIZIONE */}
             <p className="text-neutral-300 text-sm leading-relaxed mb-4">
@@ -77,7 +124,7 @@ export default function ProductModal({ product, onClose }: Props) {
               </p>
             )}
 
-            {/* SPECIFICHE – TUTTE VISIBILI */}
+            {/* SPECIFICHE */}
             {product.specifications && (
               <div className="space-y-3 text-sm mb-6">
                 {Object.entries(product.specifications).map(
