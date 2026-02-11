@@ -616,12 +616,12 @@ export const products: Product[] = [
     category: 'Consolle',
     price: '€ 700,00',
     gallery: [
-      '/images/consolle-TV.webp',
-      '/images/consolle-TV-1.webp',
-      '/images/consolle-TV-2.webp',
-      '/images/consolle-TV-3.webp',
-      '/images/consolle-TV-4.webp',
-      '/images/consolle-TV-5.webp'
+      '/images/consolle-tv.webp',
+      '/images/consolle-tv-1.webp',
+      '/images/consolle-tv-2.webp',
+      '/images/consolle-tv-3.webp',
+      '/images/consolle-tv-4.webp',
+      '/images/consolle-tv-5.webp'
     ],
     specifications: {
       altezza: '78 cm',
